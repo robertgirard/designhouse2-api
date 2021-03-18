@@ -7,7 +7,6 @@ use App\Notifications\VerifyEmail;
 //use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-//use Illuminate\Auth\Notifications\ResetPassword;
 use App\Notifications\ResetPassword;
 use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -64,6 +63,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPassword($token));
+    }
+
+    public function designs()
+    {
+        return $this->hasMany(Design::class);
     }
 
 }

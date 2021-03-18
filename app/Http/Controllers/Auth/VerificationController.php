@@ -8,16 +8,11 @@ use App\Models\User;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\URL;
 use App\Providers\RouteServiceProvider;
-// use Illuminate\Foundation\Auth\VerifiesEmails;
+//use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller
 {
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
 //        $this->middleware('auth');

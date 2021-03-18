@@ -11,7 +11,7 @@ return [
     | authentication cookies. Typically, these should include your local
     | and production domains which access your API via a frontend SPA.
     |
-    
+
 
     'stateful' => explode(',', env(
         'SANCTUM_STATEFUL_DOMAINS',
@@ -21,8 +21,10 @@ return [
 
     'stateful' => [
         env('CLIENT_URL'),
+        'SANCTUM_STATEFUL_DOMAINS',
         'localhost',
         'localhost:3000',
+        'designhouse2.test',
         'client.designhouse2.test',
         'client.designhouse2.test:3000',
         '127.0.0.1',

@@ -9,7 +9,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 //use Illuminate\Support\Facades\Route;
-
+//use Illuminate\Support\Facades\Auth;
 
 use Auth;
 
@@ -20,6 +20,7 @@ class LoginController extends Controller
 
     public function login( Request $request )
     {
+
         if (! Auth::attempt([
             'email' => $request->get('email'),
             'password' => $request->get('password')
@@ -35,7 +36,8 @@ class LoginController extends Controller
             return response()->json('email not verified', 403);
         }
 
-        return response()->json(['message' => $user->name . ' successfully Logged In'], 201 );
+//        return response()->json(['message' => $user->name . ' successfully Logged In'], 201 );
+        return response()->json($user);
 
     }
 
@@ -108,7 +110,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
 
-        Auth::logout();
+        Auth::logout('web');
 
         return response()->json(['message' => 'Logged out Successfully'], 200);
 

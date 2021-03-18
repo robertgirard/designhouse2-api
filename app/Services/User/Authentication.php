@@ -153,7 +153,8 @@ class Authentication
             return response()->json('email not verified', 403);
         }
 
-        return response()->json('Successful login', 200 );
+        //return response()->json('Successful login', 200 );
+        return response()->json(Auth::user());
 
     }
 }

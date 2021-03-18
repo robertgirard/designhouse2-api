@@ -22,7 +22,7 @@ class LoginController2 extends Controller
 
     public function register( Request $request)
     {
-        
+
     }
 
 
@@ -32,12 +32,18 @@ class LoginController2 extends Controller
         return $authentication->authenticateRequest();
     }
 
+    public function getLoggedInUser(Request $request){
+        //return response(auth()->guard()->user());
+        return response()->json(auth()->user());
+    }
+
 
     public function logout(Request $request)
     {
 
 //        dd($request);
 //        Auth::logout();
+//          auth()->guard()->logout();
         Auth::guard('web')->logout();
 
         return response()->json(['message' => 'Logged out Successfully'], 200);

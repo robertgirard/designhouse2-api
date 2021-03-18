@@ -33,12 +33,10 @@ class SettingsController extends Controller
 
         $location = new Point($request->location['latitude'], $request->location['longitude']);
 
-        return(json_encode($location));
-
         $user->update([
             'name'              => $request->name,
             'formatted_address' => $request->formatted_address,
-//            'location'          => $location,
+            'location'          => $location,
             'available_to_hire' => $request->available_to_hire,
             'about'             => $request->about,
             'tagline'           => $request->tagline,
