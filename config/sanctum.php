@@ -25,6 +25,8 @@ return [
         'localhost',
         'localhost:3000',
         'designhouse2.test',
+        'designhouse2.test:3000',
+        'designhouse2.test:3000/',
         'client.designhouse2.test',
         'client.designhouse2.test:3000',
         '127.0.0.1',

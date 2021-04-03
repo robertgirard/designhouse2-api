@@ -22,9 +22,10 @@ class MeController extends Controller
         if(auth()->check()){
  //           $user = Auth::user();
             $user = auth()->user();
-            return new UserResource($user);
-
+ //           return new UserResource($user);
+            return $user;
         }
         return response()->json(null, 401);
     }
 }
+

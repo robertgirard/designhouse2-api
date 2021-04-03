@@ -18,8 +18,10 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+/*
     public function login( Request $request )
     {
+
 
         if (! Auth::attempt([
             'email' => $request->get('email'),
@@ -40,7 +42,7 @@ class LoginController extends Controller
         return response()->json($user);
 
     }
-
+*/
 
     public function attemptLogin(Request $request)
     {
@@ -62,7 +64,7 @@ class LoginController extends Controller
         }
 
         // set the user's token
-        $this->guard()->setToken($token);
+    //    $this->guard()->setToken($token);
 
         return true;
     }
@@ -73,19 +75,19 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         // get the tokem from the authentication guard (JWT)
-        $token = (string)$this->guard()->getToken();
+//        $token = (string)$this->guard()->getToken();
 
         // extract the expiry date of the token
-        $expiration = $this->guard()->getPayload()->get('exp');
+//        $expiration = $this->guard()->getPayload()->get('exp');
 
         return response()->json([
               'message' => 'User Name ' . Auth::user()->username . ' was successfully logged in',
               'user' => Auth::user(),
               'authenticated' => Auth::guard(),
 //            'username' => Auth::user()->username,
-            'token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => $expiration
+//            'token' => $token,
+//            'token_type' => 'bearer',
+//            'expires_in' => $expiration
         ]);
     }
 
