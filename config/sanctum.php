@@ -29,6 +29,7 @@ return [
         'designhouse2.test:3000/',
         'client.designhouse2.test',
         'client.designhouse2.test:3000',
+        'chemport.site',
         '127.0.0.1',
         '127.0.0.1:8000',
         '::1'
