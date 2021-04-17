@@ -79,9 +79,15 @@ class UploadController extends Controller
             }
 
         // Update the database record with success flag
+        /*
         $this->design->update([
             'upload_successful' => true
         ]);
+        */
+        $design->update([
+            'upload_successful' => true
+        ]);
+
 
     } catch(\Exception $e){
         \Log::error($e->getMessage());
