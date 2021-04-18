@@ -51,6 +51,6 @@ class Design extends Model
 
     protected function getImagePath($size)
     {
-        return Storage::disk($this->disk)->url("app/public/uploads/designs/{$size}/".$this->image);
+        return Storage::disk($this->disk)->url("uploads/designs/{$size}/".$this->image);
     }
 }
