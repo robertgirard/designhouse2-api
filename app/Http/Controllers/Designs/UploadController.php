@@ -61,16 +61,19 @@ class UploadController extends Controller
 
         // store images to permanent disk
         // original image
+
         if(Storage::disk($disk)
             ->put('uploads/designs/original/'.$filename, fopen($original_file, 'r+'))){
                 File::delete($original_file);
             }
+
 
         // large images
         if(Storage::disk($disk)
             ->put('uploads/designs/large/'.$filename, fopen($large, 'r+'))){
                 File::delete($large);
             }
+
 
         // thumbnail images
         if(Storage::disk($disk)
@@ -84,6 +87,7 @@ class UploadController extends Controller
             'upload_successful' => true
         ]);
         */
+
         $design->update([
             'upload_successful' => true
         ]);
