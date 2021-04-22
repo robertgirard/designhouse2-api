@@ -28,7 +28,6 @@ Route::get('search/designs', 'Designs\DesignController@search');
 Route::get('search/designers', 'User\UserController@search');
 
 //  Guest Routes
-
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('verification/verify/{user}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::post('verification/resend', 'Auth\VerificationController@resend');
