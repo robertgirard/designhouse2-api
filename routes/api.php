@@ -5,9 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 
-// Public Routes
-
-Route::get('me', 'User\MeController@getMe');
 
 // Designs
 Route::get('designs', 'Designs\DesignController@index');
@@ -38,6 +35,11 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
+
+    // Public Routes
+    Route::get('me', 'User\MeController@getMe');
+
+
     Route::post('logout', 'Auth\LoginController2@logout');
     Route::put('settings/profile', 'User\SettingsController@updateProfile');
     Route::put('settings/password', 'User\SettingsController@updatePassword');

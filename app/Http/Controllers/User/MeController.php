@@ -14,7 +14,7 @@ class MeController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth:sanctum')->only('getMe');
+ //       $this->middleware('auth:sanctum')->only('getMe');
     }
 
     public function getMe()
