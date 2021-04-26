@@ -25,7 +25,10 @@ class VerificationController extends Controller
     public function verify(Request $request, User $user)
     {
 
-        // check if url is a valid signed url
+//        return $request;
+        return URL::hasValidSignature($request);
+
+         // check if url is a valid signed url
         if(! URL::hasValidSignature($request))
         {
             return response()->json(["errors" => [
